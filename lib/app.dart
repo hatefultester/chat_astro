@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2023. File was created by Matěj Grohmann, all rights reserved.
+ */
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -14,9 +18,14 @@ class MyApp extends StatelessWidget {
       translations: AppTranslations(),
       locale: const Locale('en', 'US'),
       fallbackLocale: const Locale('en', 'US'),
+      supportedLocales: const [
+        Locale('en', 'US'),
+        Locale('cs', 'CZ'),
+        Locale('es', 'ES'),
+      ],
       title: AppTranslations.appDisplayName,
       theme: AppTheme.theme,
-      home:  const UserDataGenerationScreen(),
+      home: const UserDataGenerationScreen(),
     );
   }
 }

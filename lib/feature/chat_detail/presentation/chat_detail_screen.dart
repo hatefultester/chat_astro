@@ -12,9 +12,12 @@ class ChatDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.black,
       body: Center(
-        child: Text(AppCacheService.to.userProfileData?.chatResponse ?? 'DATA NOT FOUND'),
+        child: Text(AppCacheService.to.userProfileData?.chatResponse ?? 'DATA NOT FOUND',
+        style: const TextStyle(
+          color: Colors.white, fontSize: 20,
+        ),),
       ),
     );
   }

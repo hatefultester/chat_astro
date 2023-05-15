@@ -3,6 +3,7 @@
  */
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 
@@ -27,8 +28,8 @@ class UserDataGenerationLoadingWidget extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          const Text('user_data_generation_loading',
-            style: TextStyle(fontSize: 20, color: textColor),
+          Text('user_data_generation_loading'.tr,
+            style: const TextStyle(fontSize: 20, color: textColor),
           )
         ],
       ),
