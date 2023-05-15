@@ -8,6 +8,8 @@ import '../feature/user_profile/domain/entities/user_profile_data.dart';
 import '../feature/user_profile/domain/entities/user_profile_entity.dart';
 
 class AppCacheService extends GetxService {
+  static AppCacheService get to => Get.find();
+
   UserProfileEntity? userEntity;
   UserProfileData? userProfileData;
 }

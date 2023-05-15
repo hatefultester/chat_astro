@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../../core/abstractions/base_controller.dart';
+import '../../../../../shared/app_cache_service.dart';
 import '../user_data_generation_controller.dart';
 
 class UserDataGenerationControllerImpl extends BaseController
@@ -34,8 +35,10 @@ class UserDataGenerationControllerImpl extends BaseController
       TextEditingController();
   RxBool isPlaceOfBirthTyped = false.obs;
 
+  RxBool submitResponseLoading = false.obs;
   RxBool displayWarningMessageToUser = false.obs;
   bool wasSubmitButtonTapped = false;
+
 
   @override
   void handleUserSubmitButtonTapped() async {
@@ -45,12 +48,16 @@ class UserDataGenerationControllerImpl extends BaseController
     validateIfSubmitIsAvailable();
     if (!displayWarningMessageToUser.value) {
       final UserProfileEntity entity = parseUserProfileEntity();
+      submitResponseLoading.value = true;
       final submitResult = await createUserProfileDataUseCase.call(entity);
 
       submitResult.fold((l) {
+        submitResponseLoading.value = false;
         return;
       }, (r) {
-        Get.to(ChatDetailScreen());
+        submitResponseLoading.value = false;
+        AppCacheService.to.userProfileData = r;
+        Get.to(const ChatDetailScreen());
       });
     }
   }

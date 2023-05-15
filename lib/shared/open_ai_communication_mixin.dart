@@ -5,11 +5,6 @@
 import 'package:dart_openai/openai.dart';
 
 mixin OpenAiCommunicationMixin {
-  setApiKeys({required String openAiApiKey, required String openAiOrg}) {
-    OpenAI.apiKey = openAiApiKey;
-    OpenAI.organization = openAiOrg;
-  }
-
   Future<String> openAiRequest(
       {required List<String> userMessages,
         required List<String> assistantMessages,

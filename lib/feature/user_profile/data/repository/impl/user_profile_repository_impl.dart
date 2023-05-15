@@ -20,7 +20,15 @@ class UserProfileRepositoryImpl implements UserProfileRepository {
   @override
   Future<Either<Failure, UserProfileData>> createUserProfileData(
       {required UserProfileEntity entity}) async {
-    return Left(InvalidDataFailure());
+    try {
+      final openAiResponse = await remoteDataSource.getUserProfileResponse(userProfileEntity: entity);
+      logger.d('open ai response finished: $openAiResponse');
+      return Right(UserProfileData(userProfileEntity: entity, chatResponse: openAiResponse,
+      ));
+    } on Exception catch (e) {
+      logger.e(e.toString());
+      return Left(ServerFailure());
+    }
   }
 
   @override
