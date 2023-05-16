@@ -5,7 +5,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/error/failures.dart';
+import '../../../../core/abstractions/failures.dart';
 import '../../domain/entities/user_profile_data.dart';
 import '../../domain/entities/user_profile_entity.dart';
 

@@ -5,7 +5,7 @@
 import 'package:dartz/dartz.dart';
 
 import '../../../../core/abstractions/use_case.dart';
-import '../../../../core/error/failures.dart';
+import '../../../../core/abstractions/failures.dart';
 import '../../data/repository/user_creation_repository_impl.dart';
 
 class ValidateUserPlaceOfBirthUseCase extends UseCase<UserCreationRepositoryImpl,

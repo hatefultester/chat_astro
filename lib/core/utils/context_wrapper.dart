@@ -7,4 +7,5 @@ import 'package:get/get.dart';
 
 class ContextWrapper {
   BuildContext get context => Get.context!;
+  BuildContext get overlayContext => Get.overlayContext!;
 }

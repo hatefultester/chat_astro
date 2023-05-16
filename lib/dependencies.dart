@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:logger/logger.dart';
 
 import 'core/services/impl/ads_service_impl.dart';
-import 'core/services/impl/cache_service_impl.dart';
+import 'core/services/impl/session_service_impl.dart';
 import 'core/services/impl/storage_service_impl.dart';
 import 'core/utils/context_wrapper.dart';
 import 'core/utils/dialog_utils.dart';
@@ -18,16 +18,26 @@ class InjectionContainer {
 
     // logger for application
     Get.put(Logger(), permanent: true);
+
+    // Get context wrapper for buildContext and overlay buildContext
     Get.put(ContextWrapper(), permanent: true);
 
-    // core app services
-    Get.put(StorageServiceImpl(), permanent: true);
-    Get.put(AdsServiceImpl(), permanent: true);
-    Get.put(CacheServiceImpl(), permanent: true);
+    // Session service for storing session variables and checking session state
+    Get.put(SessionServiceImpl(), permanent: true);
 
-    Get.lazyPut(() => OpenAiUtils());
+    // Storage service for managing storing locally
+    Get.put(StorageServiceImpl(logger: Get.find()), permanent: true);
+
+    // Service for handling Ad's
+    Get.put(AdsServiceImpl(), permanent: true);
+
+    // Util for OpenAiCommunication handling
+    Get.lazyPut(() => OpenAiUtils(sessionServiceImpl: Get.find()));
+
+    // Util for displaying custom dialogs
     Get.lazyPut(() => DialogUtils(contextWrapper: Get.find()));
 
+    // Loading user creation binding dependencies
     await UserCreationBinding.dependencies();
   }
 }

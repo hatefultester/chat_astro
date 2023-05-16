@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:logger/logger.dart';
 
-import '../error/failures.dart';
+import 'failures.dart';
 
 abstract class UseCase<Repository, Result, Params> {
   final Logger logger;

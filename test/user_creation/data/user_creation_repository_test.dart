@@ -12,7 +12,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:dartz/dartz.dart';
-import 'package:chat_astro/core/error/failures.dart';
+import 'package:chat_astro/core/abstractions/failures.dart';
 import 'package:logger/logger.dart';
 
 import 'user_creation_repository_test.mocks.dart';

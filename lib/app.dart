@@ -4,7 +4,7 @@
 
 import 'dart:io';
 
-import 'package:chat_astro/core/services/impl/cache_service_impl.dart';
+import 'package:chat_astro/core/services/impl/session_service_impl.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    CacheServiceImpl.to.locale = context.locale;
+    SessionServiceImpl.to.locale = context.locale;
     return GetMaterialApp(
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,

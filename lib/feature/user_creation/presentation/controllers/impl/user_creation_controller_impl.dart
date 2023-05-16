@@ -7,7 +7,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/src/material/time.dart';
 import 'package:get/get.dart';
 
-import '../../../../../core/services/impl/cache_service_impl.dart';
+import '../../../../../core/services/impl/session_service_impl.dart';
 import '../../../../../core/utils/dialog_utils.dart';
 import '../../../../chat_detail/presentation/chat_detail_screen.dart';
 import '../../../domain/entities/user_profile_data.dart';
@@ -129,7 +129,7 @@ class UserCreationControllerImpl extends GetxController
 
   @override
   void storeUserProfileDataToCache() {
-    CacheServiceImpl.to.userProfileData = state.userProfileData;
+    SessionServiceImpl.to.userProfileData = state.userProfileData;
   }
 
   @override

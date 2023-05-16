@@ -40,12 +40,13 @@ class UserCreationFormTile extends StatelessWidget {
       padding: const EdgeInsets.all(4.0),
       child: Obx(
         () => InkWell(
+          key: Key('user_creation_form_ink_well'),
           borderRadius: BorderRadius.circular(50.0),
           splashColor: isValid.value
               ? validFormColor.withOpacity(0.5)
               : invalidFormColor
                   .withOpacity(0.5),
-          onTap: editable ? null : onTap,
+          onTap: editable ? () {} : onTap,
           child: ListTile(
             title: Padding(
               padding: const EdgeInsets.only(bottom: 4.0),
