@@ -1,0 +1,11 @@
+{
+  "date_of_birth_form_title": "Datum narození:",
+  "date_of_birth_form_placeholder_hint": "Zadejte své datum narození",
+  "time_of_birth_form_title": "Čas narození:",
+  "time_of_birth_form_placeholder_hint": "Zadejte svůj čas narození",
+  "place_of_birth_form_title": "Místo frozen:",
+  "place_of_birth_form_placeholder_hint": "Zadejte název města a země, kde jste se narodil",
+  "user_data_generation_form_validation_warning": "Ujistěte se, že jste všechna pole vyplnili správně.",
+  "user_data_generation_form_submit_button": "Odeslat",
+  "user_data_generation_loading" : "Zpracováváme vaše údaje, buďte prosím trpělivý"
+}

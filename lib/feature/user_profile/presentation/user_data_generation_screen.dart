@@ -1,7 +1,11 @@
-import 'package:chat_astro/feature/user_profile/presentation/controllers/impl/user_data_generation_controller_impl.dart';
-import 'package:chat_astro/feature/user_profile/presentation/sections/user_data_generation_background_section.dart';
-import 'package:chat_astro/feature/user_profile/presentation/sections/user_data_generation_submit_form_section.dart';
-import 'package:chat_astro/feature/user_profile/presentation/widgets/user_data_generation_loading_widget.dart';
+/*
+ * Copyright (c) 2023. File was created by Matěj Grohmann, all rights reserved.
+ */
+
+import 'controllers/impl/user_data_generation_controller_impl.dart';
+import 'sections/user_data_generation_background_section.dart';
+import 'sections/user_data_generation_submit_form_section.dart';
+import 'widgets/user_data_generation_loading_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

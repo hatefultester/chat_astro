@@ -2,6 +2,7 @@
  * Copyright (c) 2023. File was created by Matěj Grohmann, all rights reserved.
  */
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
@@ -28,7 +29,7 @@ class UserDataGenerationLoadingWidget extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          Text('user_data_generation_loading'.tr,
+          Text(tr('user_data_generation_loading'),
             style: const TextStyle(fontSize: 20, color: textColor),
           )
         ],

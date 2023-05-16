@@ -1,9 +1,7 @@
-import 'package:chat_astro/feature/chat_detail/presentation/chat_detail_screen.dart';
-import 'package:chat_astro/feature/user_profile/domain/entities/user_profile_entity.dart';
-import 'package:chat_astro/feature/user_profile/domain/use_cases/create_user_profile_data_use_case.dart';
-import 'package:chat_astro/feature/user_profile/domain/use_cases/validate_user_date_of_birth_use_case.dart';
-import 'package:chat_astro/feature/user_profile/domain/use_cases/validate_user_place_of_birth_use_case.dart';
-import 'package:chat_astro/feature/user_profile/domain/use_cases/validate_user_time_of_birth_use_case.dart';
+/*
+ * Copyright (c) 2023. File was created by Matěj Grohmann, all rights reserved.
+ */
+
 import 'package:chat_astro/shared/date_picker_mixin.dart';
 import 'package:chat_astro/shared/time_picker_mixin.dart';
 import 'package:flutter/cupertino.dart';
@@ -12,6 +10,12 @@ import 'package:get/get.dart';
 
 import '../../../../../core/abstractions/base_controller.dart';
 import '../../../../../shared/app_cache_service.dart';
+import '../../../../chat_detail/presentation/chat_detail_screen.dart';
+import '../../../domain/entities/user_profile_entity.dart';
+import '../../../domain/use_cases/create_user_profile_data_use_case.dart';
+import '../../../domain/use_cases/validate_user_date_of_birth_use_case.dart';
+import '../../../domain/use_cases/validate_user_place_of_birth_use_case.dart';
+import '../../../domain/use_cases/validate_user_time_of_birth_use_case.dart';
 import '../user_data_generation_controller.dart';
 
 class UserDataGenerationControllerImpl extends BaseController
@@ -38,7 +42,6 @@ class UserDataGenerationControllerImpl extends BaseController
   RxBool submitResponseLoading = false.obs;
   RxBool displayWarningMessageToUser = false.obs;
   bool wasSubmitButtonTapped = false;
-
 
   @override
   void handleUserSubmitButtonTapped() async {
@@ -109,19 +112,19 @@ class UserDataGenerationControllerImpl extends BaseController
   }
 
   @override
-  void validateIfSubmitIsAvailable() {
-    if (!wasSubmitButtonTapped) return;
-    displayWarningMessageToUser.value = !(isTimeOfBirthSelected.value &&
-        isDateOfBirthSelected.value &&
-        isPlaceOfBirthTyped.value);
-  }
-
-  @override
   UserProfileEntity parseUserProfileEntity() {
     return UserProfileEntity(
       birthDate: dateOfBirthTextEditingController.value.text,
       birthPlace: placeOfBirthTextEditingController.value.text,
       birthTime: timeOfBirthTextEditingController.value.text,
     );
+  }
+
+  @override
+  void validateIfSubmitIsAvailable() {
+    if (!wasSubmitButtonTapped) return;
+    displayWarningMessageToUser.value = !(isTimeOfBirthSelected.value &&
+        isDateOfBirthSelected.value &&
+        isPlaceOfBirthTyped.value);
   }
 }

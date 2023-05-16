@@ -6,6 +6,7 @@
  * Copyright (c) 2023. File was created by Matěj Grohmann, all rights reserved.
  */
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -44,7 +45,7 @@ class UserDataGenerationSubmitButton extends StatelessWidget {
                 ),
               ),
               child: Text(
-                text.tr,
+                tr(text),
                 style: const TextStyle(
                   fontSize: 16.0,
                   color: Colors.white,  // White text color

@@ -2,6 +2,7 @@
  * Copyright (c) 2023. File was created by Matěj Grohmann, all rights reserved.
  */
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -49,7 +50,7 @@ class UserDataGenerationFormTile extends StatelessWidget {
             title: Padding(
               padding: const EdgeInsets.only(bottom: 4.0),
               child: Text(
-                title.tr,
+                tr(title),
                 style: TextStyle(
                   color: isValid.value ? validFormColor : invalidFormColor,
                   fontSize: formTitleFontSize,
@@ -61,7 +62,7 @@ class UserDataGenerationFormTile extends StatelessWidget {
               child: TextField(
                 onChanged: editable ? (_) => onEdit!() : null,
                 decoration: InputDecoration(
-                  hintText: hint.tr,
+                  hintText: tr(hint),
                   hintStyle: TextStyle(
                       color: isValid.value ? validFormColor : invalidFormColor),
                   prefixStyle: TextStyle(

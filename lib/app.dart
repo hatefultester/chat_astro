@@ -2,11 +2,14 @@
  * Copyright (c) 2023. File was created by Matěj Grohmann, all rights reserved.
  */
 
+import 'dart:io';
+
+import 'package:chat_astro/shared/app_cache_service.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'app_theme.dart';
-import 'app_translations.dart';
 import 'feature/user_profile/presentation/user_data_generation_screen.dart';
 
 class MyApp extends StatelessWidget {
@@ -14,16 +17,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AppCacheService.to.locale = context.locale;
     return GetMaterialApp(
-      translations: AppTranslations(),
-      locale: const Locale('en', 'US'),
-      fallbackLocale: const Locale('en', 'US'),
-      supportedLocales: const [
-        Locale('en', 'US'),
-        Locale('cs', 'CZ'),
-        Locale('es', 'ES'),
-      ],
-      title: AppTranslations.appDisplayName,
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      defaultTransition: Platform.isIOS ? null : Transition.rightToLeftWithFade,
+      locale: context.locale,
+      title: 'Chat astro',
       theme: AppTheme.theme,
       home: const UserDataGenerationScreen(),
     );

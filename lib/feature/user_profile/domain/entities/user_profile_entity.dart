@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2023. File was created by Matěj Grohmann, all rights reserved.
+ */
+
 import 'package:equatable/equatable.dart';
 
 class UserProfileEntity extends Equatable {
