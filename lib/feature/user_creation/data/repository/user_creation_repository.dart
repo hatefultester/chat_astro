@@ -16,6 +16,6 @@ abstract class UserCreationRepository {
       {required DateTime? data});
   Future<Either<Failure, String>> validateUserPlaceOfBirthInput(
       {required String data});
-  Future<Either<Failure, String>> validateUserTimeOfBirthInput(
+  Future<Either<Failure, TimeOfDay>> validateUserTimeOfBirthInput(
       {required TimeOfDay? data});
 }

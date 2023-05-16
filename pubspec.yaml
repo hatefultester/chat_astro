@@ -23,6 +23,7 @@ dependencies:
   dart_openai: 1.9.91
   loading_animation_widget: 1.2.0+4
   easy_localization: ^3.0.1
+  build_runner: ^2.3.3
 
 dev_dependencies:
   flutter_test:

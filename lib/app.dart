@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'app_theme.dart';
-import 'feature/user_creation/presentation/user_data_generation_screen.dart';
+import 'feature/user_creation/presentation/user_creation_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);

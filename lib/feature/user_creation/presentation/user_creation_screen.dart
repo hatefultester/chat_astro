@@ -2,6 +2,8 @@
  * Copyright (c) 2023. File was created by Matěj Grohmann, all rights reserved.
  */
 
+import 'package:chat_astro/feature/user_creation/presentation/controllers/impl/user_creation_controller_state.dart';
+
 import 'controllers/impl/user_creation_controller_impl.dart';
 import 'sections/background/user_creation_background_section.dart';
 import 'sections/form/user_creation_form_section.dart';
@@ -15,12 +17,20 @@ class UserCreationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<UserCreationControllerImpl>(
-      init: UserCreationControllerImpl(),
+      init: UserCreationControllerImpl(
+        state: UserCreationControllerState(
+            createProfile: Get.find(),
+            validateTime: Get.find(),
+            validatePlace: Get.find(),
+            validateDate: Get.find()),
+        contextWrapper: Get.find(),
+        dialogUtils: Get.find(),
+      ),
       builder: (UserCreationControllerImpl controller) {
         return Scaffold(
           backgroundColor: Colors.black,
           body: Obx(() {
-            if (controller.submitResponseLoading.value) {
+            if (controller.state.isLoadingPresent.value) {
               return const Center(
                 child: UserCreationLoadingWidget(
                   text: 'user_data_generation_loading',

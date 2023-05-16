@@ -36,39 +36,39 @@ class UserCreationFormSection
           children: [
             UserCreationFormTile(
               onTap: () {
-                controller.handleUserTappedOnDateOfBirthListTile();
+                controller.handleSelectBirthDate();
               },
-              controller: controller.dateOfBirthTextEditingController,
+              controller: controller.state.dateOfBirthTextEditingController,
               title: 'date_of_birth_form_title',
               hint: 'date_of_birth_form_placeholder_hint',
-              isValid: controller.isDateOfBirthSelected,
+              isValid: controller.state.isDateOfBirthValid,
             ),
             UserCreationFormTile(
               onTap: () {
-                controller.handleUserTappedOnTimeOfBirthListTile();
+                controller.handleSelectBirthTime();
               },
-              controller: controller.timeOfBirthTextEditingController,
+              controller: controller.state.timeOfBirthTextEditingController,
               title: 'time_of_birth_form_title',
               hint: 'time_of_birth_form_placeholder_hint',
-              isValid: controller.isTimeOfBirthSelected,
+              isValid: controller.state.isTimeOfBirthValid,
             ),
             UserCreationFormTile(
               editable: true,
               onEdit: () {
-                controller.handleUserTappedOnPlaceOfBirthListTile();
+                controller.handleBirthPlaceChanged();
               },
-              controller: controller.placeOfBirthTextEditingController,
+              controller: controller.state.placeOfBirthTextEditingController,
               title: 'place_of_birth_form_title',
               hint: 'place_of_birth_form_placeholder_hint',
-              isValid: controller.isPlaceOfBirthTyped,
+              isValid: controller.state.isPlaceOfBirthValid,
             ),
             UserCreationValidationWarningWidget(
-              isVisible: controller.displayWarningMessageToUser,
+              isVisible: controller.state.isWarningPresent,
               text: 'user_data_generation_form_validation_warning',
             ),
             UserCreationSubmitButton(
               onSubmit: () {
-                controller.handleUserSubmitButtonTapped();
+                controller.handleSubmitButtonTapped();
               },
               text: 'user_data_generation_form_submit_button',
             )

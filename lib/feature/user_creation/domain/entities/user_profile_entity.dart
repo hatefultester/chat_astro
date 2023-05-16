@@ -8,8 +8,9 @@ class UserProfileEntity extends Equatable {
   final String birthDate;
   final String birthPlace;
   final String birthTime;
+  final String userLanguage;
 
-  const UserProfileEntity({required this.birthDate, required this.birthPlace, required this.birthTime});
+  const UserProfileEntity({required this.userLanguage, required this.birthDate, required this.birthPlace, required this.birthTime});
 
   @override
   List<Object?> get props => [birthDate, birthPlace, birthTime];

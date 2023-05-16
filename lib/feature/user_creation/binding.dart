@@ -8,10 +8,10 @@ import 'package:get/get.dart';
 
 class UserCreationBinding {
   static Future<void> dependencies() async {
-    Get.put(UserCreationRemoteDataSourceImpl(), permanent: true);
+    Get.put(UserCreationRemoteDataSourceImpl(openAiUtils: Get.find(), ), permanent: true);
 
     Get.lazyPut(
-            () => UserCreationRepositoryImpl(remoteDataSource: Get.find(), logger: Get.find()),
+            () => UserCreationRepositoryImpl(remoteDataSource: Get.find(), logger: Get.find(),),
     );
 
     Get.lazyPut(

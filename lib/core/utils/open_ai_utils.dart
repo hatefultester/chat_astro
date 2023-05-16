@@ -4,7 +4,7 @@
 
 import 'package:dart_openai/openai.dart';
 
-mixin OpenAiCommunicationMixin {
+class OpenAiUtils {
   Future<String> openAiRequest(
       {required List<String> userMessages,
         required List<String> assistantMessages,

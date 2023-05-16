@@ -10,12 +10,12 @@ import '../../../../core/error/failures.dart';
 import '../../data/repository/user_creation_repository_impl.dart';
 
 class ValidateUserTimeOfBirthUseCase extends UseCase<UserCreationRepositoryImpl,
-    String, TimeOfDay?> {
+    TimeOfDay, TimeOfDay?> {
   ValidateUserTimeOfBirthUseCase(
       {required super.repository, required super.logger});
 
   @override
-  Future<Either<Failure, String>> call(
+  Future<Either<Failure, TimeOfDay>> call(
       TimeOfDay? params) async {
     logger.i('USER PROFILE USE CASE CALLED: ValidateUserTimeOfBirthUseCase');
     return await repository.validateUserTimeOfBirthInput(data: params);
