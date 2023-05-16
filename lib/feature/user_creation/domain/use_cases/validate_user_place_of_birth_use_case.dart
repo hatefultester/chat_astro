@@ -6,9 +6,9 @@ import 'package:dartz/dartz.dart';
 
 import '../../../../core/abstractions/use_case.dart';
 import '../../../../core/error/failures.dart';
-import '../../data/repository/impl/user_profile_repository_impl.dart';
+import '../../data/repository/user_creation_repository_impl.dart';
 
-class ValidateUserPlaceOfBirthUseCase extends UseCase<UserProfileRepositoryImpl,
+class ValidateUserPlaceOfBirthUseCase extends UseCase<UserCreationRepositoryImpl,
     String, String> {
   ValidateUserPlaceOfBirthUseCase(
       {required super.repository, required super.logger});

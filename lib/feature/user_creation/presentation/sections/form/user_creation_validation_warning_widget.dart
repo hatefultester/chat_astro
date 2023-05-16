@@ -6,11 +6,11 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class UserDataGenerationValidationWarningWidget extends StatelessWidget {
+class UserCreationValidationWarningWidget extends StatelessWidget {
   final RxBool isVisible;
   final String text;
 
-  const UserDataGenerationValidationWarningWidget({super.key,
+  const UserCreationValidationWarningWidget({super.key,
     required this.isVisible,
     required this.text,
   });
