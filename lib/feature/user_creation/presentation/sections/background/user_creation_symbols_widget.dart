@@ -8,8 +8,8 @@ const List<String> specialCharacters = [
   '♈ ♉', '♊ ♋ ♌ ♍', '♎ ♏', '♐'
 ];
 
-class UserDataGenerationSpecialSymbolsWidget extends StatelessWidget {
-  const UserDataGenerationSpecialSymbolsWidget({Key? key}) : super(key: key);
+class UserCreationSpecialSymbolsWidget extends StatelessWidget {
+  const UserCreationSpecialSymbolsWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

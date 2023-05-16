@@ -2,25 +2,25 @@
  * Copyright (c) 2023. File was created by Matěj Grohmann, all rights reserved.
  */
 
-import 'package:chat_astro/shared/date_picker_mixin.dart';
-import 'package:chat_astro/shared/time_picker_mixin.dart';
+import 'package:chat_astro/core/utils/date_picker_mixin.dart';
+import 'package:chat_astro/core/utils/time_picker_mixin.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../../core/abstractions/base_controller.dart';
-import '../../../../../shared/app_cache_service.dart';
+import '../../../../../core/services/impl/cache_service_impl.dart';
 import '../../../../chat_detail/presentation/chat_detail_screen.dart';
 import '../../../domain/entities/user_profile_entity.dart';
 import '../../../domain/use_cases/create_user_profile_data_use_case.dart';
 import '../../../domain/use_cases/validate_user_date_of_birth_use_case.dart';
 import '../../../domain/use_cases/validate_user_place_of_birth_use_case.dart';
 import '../../../domain/use_cases/validate_user_time_of_birth_use_case.dart';
-import '../user_data_generation_controller.dart';
+import '../user_creation_controller.dart';
 
-class UserDataGenerationControllerImpl extends BaseController
+class UserCreationControllerImpl extends BaseController
     with TimePickerMixin, DatePickerMixin
-    implements UserDataGenerationController {
+    implements UserCreationController {
   final CreateUserProfileDataUseCase createUserProfileDataUseCase = Get.find();
   final ValidateUserTimeOfBirthUseCase validateUserTimeOfBirthUseCase =
       Get.find();
@@ -59,7 +59,7 @@ class UserDataGenerationControllerImpl extends BaseController
         return;
       }, (r) {
         submitResponseLoading.value = false;
-        AppCacheService.to.userProfileData = r;
+        CacheServiceImpl.to.userProfileData = r;
         Get.to(const ChatDetailScreen());
       });
     }

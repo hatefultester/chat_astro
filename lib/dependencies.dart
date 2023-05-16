@@ -6,8 +6,8 @@ import 'package:logger/logger.dart';
 
 import 'core/services/impl/ads_service_impl.dart';
 import 'core/services/impl/storage_service_impl.dart';
-import 'feature/user_profile/binding.dart';
-import 'shared/app_cache_service.dart';
+import 'feature/user_creation/binding.dart';
+import 'core/services/impl/cache_service_impl.dart';
 
 class InjectionContainer {
   static Future<void> dependencies() async {
@@ -20,8 +20,8 @@ class InjectionContainer {
     // core app services
     Get.put(StorageServiceImpl(), permanent: true);
     Get.put(AdsServiceImpl(), permanent: true);
-    Get.put(AppCacheService(), permanent: true);
+    Get.put(CacheServiceImpl(), permanent: true);
 
-    await UserProfileBinding.dependencies();
+    await UserCreationBinding.dependencies();
   }
 }

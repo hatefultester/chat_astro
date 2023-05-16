@@ -9,16 +9,16 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:logger/logger.dart';
 
-import '../../../domain/entities/user_profile_data.dart';
-import '../../../domain/entities/user_profile_entity.dart';
-import '../../data_source/impl/user_profile_remote_data_source_impl.dart';
-import '../user_profile_repository.dart';
+import '../../domain/entities/user_profile_data.dart';
+import '../../domain/entities/user_profile_entity.dart';
+import '../data_source/user_creation_remote_data_source_impl.dart';
+import 'user_creation_repository.dart';
 
-class UserProfileRepositoryImpl implements UserProfileRepository {
+class UserCreationRepositoryImpl implements UserCreationRepository {
   final Logger logger;
-  final UserProfileRemoteDataSourceImpl remoteDataSource;
+  final UserCreationRemoteDataSourceImpl remoteDataSource;
 
-  UserProfileRepositoryImpl(
+  UserCreationRepositoryImpl(
       {required this.remoteDataSource, required this.logger});
 
   @override

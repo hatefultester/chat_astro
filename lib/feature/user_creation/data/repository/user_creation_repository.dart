@@ -9,7 +9,7 @@ import '../../../../core/error/failures.dart';
 import '../../domain/entities/user_profile_data.dart';
 import '../../domain/entities/user_profile_entity.dart';
 
-abstract class UserProfileRepository {
+abstract class UserCreationRepository {
   Future<Either<Failure, UserProfileData>> createUserProfileData(
       {required UserProfileEntity entity});
   Future<Either<Failure, String>> validateUserDateOfBirthData(

@@ -5,16 +5,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../controllers/impl/user_data_generation_controller_impl.dart';
-import '../widgets/user_data_generation_form_tile.dart';
-import '../widgets/user_data_generation_submit_button.dart';
-import '../widgets/user_data_generation_validation_warning_widget.dart';
+import '../../controllers/impl/user_creation_controller_impl.dart';
+import 'user_creation_form_tile.dart';
+import 'user_creation_submit_button.dart';
+import 'user_creation_validation_warning_widget.dart';
 
 const Color borderColor = Color.fromARGB(255, 0, 118, 41);
 
-class UserDataGenerationSubmitFormSection
-    extends GetView<UserDataGenerationControllerImpl> {
-  const UserDataGenerationSubmitFormSection({Key? key}) : super(key: key);
+class UserCreationFormSection
+    extends GetView<UserCreationControllerImpl> {
+  const UserCreationFormSection({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class UserDataGenerationSubmitFormSection
         ),
         child: ListView(
           children: [
-            UserDataGenerationFormTile(
+            UserCreationFormTile(
               onTap: () {
                 controller.handleUserTappedOnDateOfBirthListTile();
               },
@@ -43,7 +43,7 @@ class UserDataGenerationSubmitFormSection
               hint: 'date_of_birth_form_placeholder_hint',
               isValid: controller.isDateOfBirthSelected,
             ),
-            UserDataGenerationFormTile(
+            UserCreationFormTile(
               onTap: () {
                 controller.handleUserTappedOnTimeOfBirthListTile();
               },
@@ -52,7 +52,7 @@ class UserDataGenerationSubmitFormSection
               hint: 'time_of_birth_form_placeholder_hint',
               isValid: controller.isTimeOfBirthSelected,
             ),
-            UserDataGenerationFormTile(
+            UserCreationFormTile(
               editable: true,
               onEdit: () {
                 controller.handleUserTappedOnPlaceOfBirthListTile();
@@ -62,11 +62,11 @@ class UserDataGenerationSubmitFormSection
               hint: 'place_of_birth_form_placeholder_hint',
               isValid: controller.isPlaceOfBirthTyped,
             ),
-            UserDataGenerationValidationWarningWidget(
+            UserCreationValidationWarningWidget(
               isVisible: controller.displayWarningMessageToUser,
               text: 'user_data_generation_form_validation_warning',
             ),
-            UserDataGenerationSubmitButton(
+            UserCreationSubmitButton(
               onSubmit: () {
                 controller.handleUserSubmitButtonTapped();
               },

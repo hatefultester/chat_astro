@@ -2,17 +2,14 @@
  * Copyright (c) 2023. File was created by Matěj Grohmann, all rights reserved.
  */
 
-import 'package:easy_localization/easy_localization.dart';
-import 'package:get/get.dart';
+import '../../../../core/services/impl/cache_service_impl.dart';
+import '../../../../core/utils/open_ai_communication_mixin.dart';
+import '../../domain/entities/user_profile_entity.dart';
+import 'user_creation_remote_data_source.dart';
 
-import '../../../../../shared/app_cache_service.dart';
-import '../../../../../shared/open_ai_communication_mixin.dart';
-import '../../../domain/entities/user_profile_entity.dart';
-import '../user_profile_remote_data_source.dart';
-
-class UserProfileRemoteDataSourceImpl
+class UserCreationRemoteDataSourceImpl
     with OpenAiCommunicationMixin
-    implements UserProfileRemoteDataSource {
+    implements UserCreationRemoteDataSource {
   @override
   Future<String> getUserProfileResponse(
       {required UserProfileEntity userProfileEntity}) async {
@@ -21,7 +18,7 @@ class UserProfileRemoteDataSourceImpl
         'my day of birth: ${userProfileEntity.birthDate}'
             'my time of birth: ${userProfileEntity.birthTime}'
             'my birth place: ${userProfileEntity.birthPlace}'
-            'my language: ${AppCacheService.to.locale?.languageCode}'
+            'my language: ${CacheServiceImpl.to.locale?.languageCode}'
       ];
 
       List<String> assistantInstruction = [

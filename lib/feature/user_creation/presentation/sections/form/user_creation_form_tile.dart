@@ -12,7 +12,7 @@ const Color invalidFormColor = Color.fromARGB(255, 207, 0, 1);
 const Color validEnabledBorderColor = Color.fromARGB(255, 0, 58, 41);
 const Color validFormColor = Color.fromARGB(255, 0, 118, 41);
 
-class UserDataGenerationFormTile extends StatelessWidget {
+class UserCreationFormTile extends StatelessWidget {
   final RxBool isValid;
   final TextEditingController controller;
   final String title;
@@ -21,7 +21,7 @@ class UserDataGenerationFormTile extends StatelessWidget {
   final bool editable;
   final VoidCallback? onEdit;
 
-  const UserDataGenerationFormTile({
+  const UserCreationFormTile({
     Key? key,
     required this.controller,
     required this.title,

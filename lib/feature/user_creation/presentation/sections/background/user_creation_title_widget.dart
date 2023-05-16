@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 const Color titleColor = Color.fromARGB(255, 255, 140, 105);
 const Color borderColor = Color.fromARGB(255, 255, 150, 38);
 
-class UserDataGenerationTitleWidget extends StatelessWidget {
-  const UserDataGenerationTitleWidget({Key? key}) : super(key: key);
+class UserCreationTitleWidget extends StatelessWidget {
+  const UserCreationTitleWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -4,7 +4,7 @@
 
 import '../../domain/entities/user_profile_entity.dart';
 
-abstract class UserProfileRemoteDataSource {
+abstract class UserCreationRemoteDataSource {
   Future<String> getUserProfileResponse(
       {required UserProfileEntity userProfileEntity});
 }

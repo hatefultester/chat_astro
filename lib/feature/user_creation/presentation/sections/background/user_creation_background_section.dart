@@ -5,13 +5,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../controllers/impl/user_data_generation_controller_impl.dart';
-import '../widgets/user_data_generation_special_symbols_widget.dart';
-import '../widgets/user_data_generation_title_widget.dart';
+import '../../controllers/impl/user_creation_controller_impl.dart';
+import 'user_creation_symbols_widget.dart';
+import 'user_creation_title_widget.dart';
 
-class UserDataGenerationBackgroundSection
-    extends GetView<UserDataGenerationControllerImpl> {
-  const UserDataGenerationBackgroundSection({Key? key}) : super(key: key);
+class UserCreationBackgroundSection
+    extends GetView<UserCreationControllerImpl> {
+  const UserCreationBackgroundSection({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,10 +32,10 @@ class UserDataGenerationBackgroundSection
               children: const [
                 Expanded(
                   flex: 3,
-                  child: UserDataGenerationTitleWidget(),
+                  child: UserCreationTitleWidget(),
                 ),
                 Expanded(
-                    flex: 2, child: UserDataGenerationSpecialSymbolsWidget())
+                    flex: 2, child: UserCreationSpecialSymbolsWidget())
               ],
             ),
           ),

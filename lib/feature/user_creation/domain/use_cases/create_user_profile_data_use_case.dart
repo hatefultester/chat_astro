@@ -6,11 +6,11 @@ import 'package:dartz/dartz.dart';
 
 import '../../../../core/abstractions/use_case.dart';
 import '../../../../core/error/failures.dart';
-import '../../data/repository/impl/user_profile_repository_impl.dart';
+import '../../data/repository/user_creation_repository_impl.dart';
 import '../entities/user_profile_data.dart';
 import '../entities/user_profile_entity.dart';
 
-class CreateUserProfileDataUseCase extends UseCase<UserProfileRepositoryImpl,
+class CreateUserProfileDataUseCase extends UseCase<UserCreationRepositoryImpl,
     UserProfileData, UserProfileEntity> {
   CreateUserProfileDataUseCase(
       {required super.repository, required super.logger});

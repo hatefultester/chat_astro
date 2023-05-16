@@ -11,8 +11,10 @@ import 'package:loading_animation_widget/loading_animation_widget.dart';
 const Color loadingBarColor = Color.fromARGB(255, 255, 140, 105);
 const Color textColor = Color.fromARGB(255, 255, 150, 38);
 
-class UserDataGenerationLoadingWidget extends StatelessWidget {
-  const UserDataGenerationLoadingWidget({Key? key}) : super(key: key);
+class UserCreationLoadingWidget extends StatelessWidget {
+  final String text;
+
+  const UserCreationLoadingWidget({Key? key, required this.text}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,7 @@ class UserDataGenerationLoadingWidget extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          Text(tr('user_data_generation_loading'),
+          Text(tr(text),
             style: const TextStyle(fontSize: 20, color: textColor),
           )
         ],

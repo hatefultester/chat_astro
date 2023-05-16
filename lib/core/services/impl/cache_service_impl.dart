@@ -5,14 +5,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../feature/user_profile/domain/entities/user_profile_data.dart';
-import '../feature/user_profile/domain/entities/user_profile_entity.dart';
+import '../../../feature/user_creation/domain/entities/user_profile_data.dart';
+import '../cache_service.dart';
 
-class AppCacheService extends GetxService {
-  static AppCacheService get to => Get.find();
+
+class CacheServiceImpl extends GetxService implements CacheService {
+  static CacheServiceImpl get to => Get.find();
 
   Locale? locale;
 
-  UserProfileEntity? userEntity;
   UserProfileData? userProfileData;
+
+  @override
+  Future<void> clearCache() async {
+    userProfileData = null;
+  }
 }

@@ -2,22 +2,17 @@
  * Copyright (c) 2023. File was created by Matěj Grohmann, all rights reserved.
  */
 
-/*
- * Copyright (c) 2023. File was created by Matěj Grohmann, all rights reserved.
- */
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 
 const Color buttonBackgroundColor = Color.fromARGB(255, 0, 100, 41);
 
-class UserDataGenerationSubmitButton extends StatelessWidget {
+class UserCreationSubmitButton extends StatelessWidget {
   final VoidCallback onSubmit;
   final String text;
 
-  const UserDataGenerationSubmitButton({
+  const UserCreationSubmitButton({
     Key? key,
     required this.onSubmit,
     required this.text,
