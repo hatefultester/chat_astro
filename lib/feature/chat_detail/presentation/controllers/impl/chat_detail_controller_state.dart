@@ -4,6 +4,7 @@
 
 import 'package:chat_astro/feature/chat_detail/domain/use_cases/chat_detail_get_assistant_response_use_case.dart';
 import 'package:chat_astro/feature/chat_detail/domain/use_cases/chat_detail_validate_user_message_use_case.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../domain/entities/chat_message.dart';
@@ -19,6 +20,8 @@ class ChatDetailControllerState {
     required this.getChatData,
     required this.validateMessage,
   });
+
+  final ScrollController scrollController = ScrollController();
 
   RxList<ChatMessage> messages = RxList();
 

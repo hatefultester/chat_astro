@@ -9,13 +9,16 @@ import 'package:get/get_state_manager/src/simple/get_view.dart';
 import '../widgets/chat_detail_user_message_bubble.dart';
 
 class ChatDetailChatMessagesSection extends GetView<ChatDetailControllerImpl> {
-  const ChatDetailChatMessagesSection({super.key});
+  const ChatDetailChatMessagesSection({Key? key}) : super(key: key);
+
+  ScrollController get scrollController => controller.state.scrollController;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox.expand(
       child: Obx(() {
         return ListView.builder(
+          controller: scrollController,
           itemCount: controller.state.messages.length,
           itemBuilder: (context, index) {
             final message = controller.state.messages[index];

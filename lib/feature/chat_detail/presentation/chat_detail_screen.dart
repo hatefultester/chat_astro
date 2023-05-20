@@ -28,6 +28,7 @@ class ChatDetailScreen extends StatelessWidget {
             title: Text(
               tr(LocaleKey.CHAT_TITLE),
             ),
+            centerTitle: true,
           ),
           backgroundColor: Colors.black,
           body: Obx(

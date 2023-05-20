@@ -46,12 +46,21 @@ class ChatDetailRepositoryImpl implements ChatDetailRepository {
   @override
   Future<Either<Failure, ChatMessage>> getAssistantResponse(
       {required List<ChatMessage> chat, required String userAvatar}) async {
-    return Right(ChatMessage(
-        message: 'Response fake', owner: ChatMessageOwner.assistant));
+    try {
+      final String response =
+          await _remoteDataSource.getChatResponse(messages: chat);
+      return Right(
+        ChatMessage(message: response, owner: ChatMessageOwner.assistant),
+      );
+    } on Exception catch (e) {
+      _logger.e(e.toString());
+      return Left(ServerFailure());
+    }
   }
 
   @override
   Future<Either<Failure, bool>> validateUserMessage(String message) async {
+    //return Left(InvalidDataFailure());
     return const Right(true);
   }
 }

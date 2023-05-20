@@ -1,11 +1,20 @@
 {
   "date_of_birth_form_title": "Datum narození:",
-  "date_of_birth_form_placeholder_hint": "Zadejte své datum narození",
+  "date_of_birth_form_placeholder_hint": "Zadejte datum narození",
   "time_of_birth_form_title": "Čas narození:",
-  "time_of_birth_form_placeholder_hint": "Zadejte svůj čas narození",
-  "place_of_birth_form_title": "Místo frozen:",
-  "place_of_birth_form_placeholder_hint": "Zadejte název města a země, kde jste se narodil",
-  "user_data_generation_form_validation_warning": "Ujistěte se, že jste všechna pole vyplnili správně.",
+  "time_of_birth_form_placeholder_hint": "Zadejte čas narození",
+  "place_of_birth_form_title": "Místo narození:",
+  "place_of_birth_form_placeholder_hint": "Zadejte název města a země, ve které jste se narodili",
+  "user_data_generation_form_validation_warning": "Prosím, ujistěte se, že jste správně vyplnili všechna pole.",
   "user_data_generation_form_submit_button": "Odeslat",
-  "user_data_generation_loading" : "Zpracováváme vaše údaje, buďte prosím trpělivý"
+  "user_data_generation_loading": "Zpracováváme vaše údaje, prosím, buďte trpěliví",
+  "chat_loading": "Načítání chatu...",
+  "chat_try_again": "Zkusit znovu",
+  "chat_error_message": "Při načítání chatu se vyskytla chyba",
+  "chat_title": "Zprávy chatu",
+  "chat_initial_assistant_chat_message": "Pro více informací se mě klidně na cokoli zeptejte 😊",
+  "chat_hint_message": "Napište zprávu",
+  "chat_validation_warning": "Vstup musí obsahovat alespoň 10 znaků.",
+  "warning_dialog_title": "Varování",
+  "warning_dialog_ok": "Rozumím"
 }

@@ -2,7 +2,9 @@
  * Copyright (c) 2023. File was created by Matěj Grohmann, all rights reserved.
  */
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import '../../app/app_locale_keys.dart';
 import 'context_wrapper.dart';
 
 class DialogUtils {
@@ -47,6 +49,26 @@ class DialogUtils {
         return Theme(
           data: pickerTheme,
           child: child!,
+        );
+      },
+    );
+  }
+
+  void showWarning(String message) {
+    showDialog(
+      context: contextWrapper.context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title:  Text(tr(LocaleKey.WARNING_DIALOG_TITLE)),
+          content: Text(message),
+          actions: [
+            TextButton(
+              child: Text(tr(LocaleKey.WARNING_DIALOG_OK)),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
         );
       },
     );

@@ -13,5 +13,8 @@
   "chat_error_message": "Loading chat failed during loading",
   "chat_title": "Chat messages",
   "chat_initial_assistant_chat_message": "To know more, feel free to ask me anything 😊",
-  "chat_hint_message" : "Type a message"
+  "chat_hint_message" : "Type a message",
+  "chat_validation_warning" : "Your input must be at least 10 characters.",
+  "warning_dialog_title": "Warning",
+  "warning_dialog_ok" : "I understand"
 }

@@ -1,11 +1,20 @@
 {
   "date_of_birth_form_title": "Fecha de nacimiento:",
-  "date_of_birth_form_placeholder_hint": "Inserte su fecha de nacimiento",
+  "date_of_birth_form_placeholder_hint": "Ingresa tu fecha de nacimiento",
   "time_of_birth_form_title": "Hora de nacimiento:",
-  "time_of_birth_form_placeholder_hint": "Inserte su hora de nacimiento",
+  "time_of_birth_form_placeholder_hint": "Ingresa tu hora de nacimiento",
   "place_of_birth_form_title": "Lugar de nacimiento:",
-  "place_of_birth_form_placeholder_hint": "Ingrese el nombre de la ciudad y el país donde nació",
-  "user_data_generation_form_validation_warning": "Por favor, asegúrese de haber llenado todos los campos correctamente.",
+  "place_of_birth_form_placeholder_hint": "Ingresa el nombre de la ciudad y país en que naciste",
+  "user_data_generation_form_validation_warning": "Por favor, asegúrate de completar todos los campos correctamente.",
   "user_data_generation_form_submit_button": "Enviar",
-  "user_data_generation_loading" : "Estamos procesando sus datos, por favor sea paciente"
+  "user_data_generation_loading": "Estamos procesando tus datos, por favor ten paciencia",
+  "chat_loading": "Cargando chat...",
+  "chat_try_again": "Intentar de nuevo",
+  "chat_error_message": "Error al cargar el chat",
+  "chat_title": "Mensajes del chat",
+  "chat_initial_assistant_chat_message": "Para saber más, siéntete libre de preguntarme cualquier cosa 😊",
+  "chat_hint_message": "Escribe un mensaje",
+  "chat_validation_warning": "Tu entrada debe tener al menos 10 caracteres.",
+  "warning_dialog_title": "Advertencia",
+  "warning_dialog_ok": "Entendido"
 }

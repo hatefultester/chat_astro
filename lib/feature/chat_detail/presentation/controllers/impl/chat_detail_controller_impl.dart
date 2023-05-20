@@ -3,6 +3,7 @@
  */
 
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:logger/logger.dart';
 
@@ -45,13 +46,14 @@ class ChatDetailControllerImpl extends GetxController
     final validationResult = await state.validateMessage(message);
 
     if (validationResult.isLeft()) {
-      // todo implement validation waring text
+      dialogUtils.showWarning(tr(LocaleKey.CHAT_VALIDATION_WARNING));
       return;
     }
 
     state.messages.add(
       ChatMessage(message: message, owner: ChatMessageOwner.user),
     );
+    _scrollTillEnd();
     state.toggleAssistantWriting();
     final result = await state.getChatData.call(state.getChatParams());
 
@@ -100,9 +102,12 @@ class ChatDetailControllerImpl extends GetxController
             message: tr(LocaleKey.CHAT_INITIAL_ASSISTANT_CHAT_MESSAGE),
             owner: ChatMessageOwner.assistant),
       );
+      _scrollTillEnd();
     } else {
       SchedulerBinding.instance.addPostFrameCallback((_) {
         logger.d('CHAT CONTROLLER: handle stop assistant writing');
+        _scrollTillEnd();
+
         state.stopAssistantWriting();
       });
     }
@@ -113,6 +118,16 @@ class ChatDetailControllerImpl extends GetxController
     SchedulerBinding.instance.addPostFrameCallback((_) {
       logger.d('CHAT CONTROLLER: handle assistant start writing');
       state.toggleAssistantWriting();
+    });
+  }
+
+  _scrollTillEnd() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      state.scrollController.animateTo(
+        state.scrollController.position.maxScrollExtent,
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeOut,
+      );
     });
   }
 }
