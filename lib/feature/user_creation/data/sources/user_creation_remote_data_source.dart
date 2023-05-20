@@ -6,5 +6,5 @@ import '../../domain/entities/user_profile_entity.dart';
 
 abstract class UserCreationRemoteDataSource {
   Future<String> getUserProfileResponse(
-      {required UserProfileEntity userProfileEntity});
+      {required UserInfo userProfileEntity});
 }

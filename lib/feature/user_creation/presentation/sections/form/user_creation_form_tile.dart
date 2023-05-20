@@ -6,7 +6,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-const double formTitleFontSize = 24;
+const double formTitleFontSize = 20;
 const Color invalidEnabledBorderColor = Color.fromARGB(255, 80, 0, 0);
 const Color invalidFormColor = Color.fromARGB(255, 207, 0, 1);
 const Color validEnabledBorderColor = Color.fromARGB(255, 0, 58, 41);
@@ -30,8 +30,10 @@ class UserCreationFormTile extends StatelessWidget {
     required this.isValid,
     this.editable = false,
     this.onEdit,
-  })  : assert(editable || onTap != null, 'onTap must be provided when editable is false.'),
-        assert(!editable || onEdit != null, 'onEdit must be provided when editable is true.'),
+  })  : assert(editable || onTap != null,
+            'onTap must be provided when editable is false.'),
+        assert(!editable || onEdit != null,
+            'onEdit must be provided when editable is true.'),
         super(key: key);
 
   @override
@@ -40,12 +42,11 @@ class UserCreationFormTile extends StatelessWidget {
       padding: const EdgeInsets.all(4.0),
       child: Obx(
         () => InkWell(
-          key: Key('user_creation_form_ink_well'),
+          key: const Key('user_creation_form_ink_well'),
           borderRadius: BorderRadius.circular(50.0),
           splashColor: isValid.value
               ? validFormColor.withOpacity(0.5)
-              : invalidFormColor
-                  .withOpacity(0.5),
+              : invalidFormColor.withOpacity(0.5),
           onTap: editable ? () {} : onTap,
           child: ListTile(
             title: Padding(

@@ -22,15 +22,15 @@ dependencies:
   intl: 0.17.0
   dart_openai: 1.9.91
   loading_animation_widget: 1.2.0+4
-  easy_localization: ^3.0.1
-  build_runner: ^2.3.3
-  connectivity_plus: ^4.0.0
+  easy_localization: 3.0.2
+  build_runner: 2.3.3
+  connectivity_plus: 4.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^2.0.0
+  flutter_lints: 2.0.0
 
 flutter:
   uses-material-design: true

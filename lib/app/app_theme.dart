@@ -13,8 +13,7 @@ class AppTheme {
             fontSize: 18,
           ),
         ),
-        backgroundColor:
-        MaterialStateProperty.all<Color>(Colors.blueAccent),
+        backgroundColor: MaterialStateProperty.all<Color>(Colors.blueAccent),
         foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(

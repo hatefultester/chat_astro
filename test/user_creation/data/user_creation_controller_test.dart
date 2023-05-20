@@ -2,7 +2,7 @@
  * Copyright (c) 2023. File was created by Matěj Grohmann, all rights reserved.
  */
 
-import 'package:chat_astro/feature/user_creation/data/data_source/user_creation_remote_data_source_impl.dart';
+import 'package:chat_astro/feature/user_creation/data/sources/user_creation_remote_data_source_impl.dart';
 import 'package:chat_astro/feature/user_creation/data/repository/user_creation_repository_impl.dart';
 import 'package:chat_astro/feature/user_creation/domain/use_cases/create_user_profile_data_use_case.dart';
 import 'package:chat_astro/feature/user_creation/domain/use_cases/validate_user_date_of_birth_use_case.dart';

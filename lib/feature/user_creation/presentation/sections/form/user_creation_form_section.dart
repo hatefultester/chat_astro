@@ -2,6 +2,7 @@
  * Copyright (c) 2023. File was created by Matěj Grohmann, all rights reserved.
  */
 
+import 'package:chat_astro/app/app_locale_keys.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,67 +13,68 @@ import 'user_creation_validation_warning_widget.dart';
 
 const Color borderColor = Color.fromARGB(255, 0, 118, 41);
 
-class UserCreationFormSection
-    extends GetView<UserCreationControllerImpl> {
+class UserCreationFormSection extends GetView<UserCreationControllerImpl> {
   const UserCreationFormSection({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var children = [
+      UserCreationFormTile(
+        onTap: () {
+          controller.handleSelectBirthDate();
+        },
+        controller: controller.state.dateOfBirthTextEditingController,
+        title: LocaleKey.DATE_OF_BIRTH_FORM_TITLE,
+        hint: LocaleKey.DATE_OF_BIRTH_FORM_PLACEHOLDER_HINT,
+        isValid: controller.state.isDateOfBirthValid,
+      ),
+      UserCreationFormTile(
+        onTap: () {
+          controller.handleSelectBirthTime();
+        },
+        controller: controller.state.timeOfBirthTextEditingController,
+        title: LocaleKey.TIME_OF_BIRTH_FORM_TITLE,
+        hint: LocaleKey.TIME_OF_BIRTH_FORM_PLACEHOLDER_HINT,
+        isValid: controller.state.isTimeOfBirthValid,
+      ),
+      UserCreationFormTile(
+        editable: true,
+        onEdit: () {
+          controller.handleBirthPlaceChanged();
+        },
+        controller: controller.state.placeOfBirthTextEditingController,
+        title: LocaleKey.PLACE_OF_BIRTH_FORM_TITLE,
+        hint: LocaleKey.PLACE_OF_BIRTH_FORM_PLACEHOLDER_HINT,
+        isValid: controller.state.isPlaceOfBirthValid,
+      ),
+      UserCreationValidationWarningWidget(
+        isVisible: controller.state.isWarningPresent,
+        text: LocaleKey.USER_DATA_GENERATION_FORM_VALIDATION_WARNING,
+      ),
+      UserCreationSubmitButton(
+        onSubmit: () {
+          controller.handleSubmitButtonTapped();
+        },
+        text: LocaleKey.USER_DATA_GENERATION_FORM_SUBMIT_BUTTON,
+      )
+    ];
+
     return SizedBox.expand(
       child: Container(
         decoration: const BoxDecoration(
           border: Border(
             top: BorderSide(
-              color: borderColor, // Specify the color of the border here
-              width: 8.0, // Specify the thickness of the border here
+              color: borderColor,
+              width: 8.0,
             ),
             bottom: BorderSide(
-              color: borderColor, // Specify the color of the border here
-              width: 8.0, // Specify the thickness of the border here
+              color: borderColor,
+              width: 8.0,
             ),
           ),
         ),
         child: ListView(
-          children: [
-            UserCreationFormTile(
-              onTap: () {
-                controller.handleSelectBirthDate();
-              },
-              controller: controller.state.dateOfBirthTextEditingController,
-              title: 'date_of_birth_form_title',
-              hint: 'date_of_birth_form_placeholder_hint',
-              isValid: controller.state.isDateOfBirthValid,
-            ),
-            UserCreationFormTile(
-              onTap: () {
-                controller.handleSelectBirthTime();
-              },
-              controller: controller.state.timeOfBirthTextEditingController,
-              title: 'time_of_birth_form_title',
-              hint: 'time_of_birth_form_placeholder_hint',
-              isValid: controller.state.isTimeOfBirthValid,
-            ),
-            UserCreationFormTile(
-              editable: true,
-              onEdit: () {
-                controller.handleBirthPlaceChanged();
-              },
-              controller: controller.state.placeOfBirthTextEditingController,
-              title: 'place_of_birth_form_title',
-              hint: 'place_of_birth_form_placeholder_hint',
-              isValid: controller.state.isPlaceOfBirthValid,
-            ),
-            UserCreationValidationWarningWidget(
-              isVisible: controller.state.isWarningPresent,
-              text: 'user_data_generation_form_validation_warning',
-            ),
-            UserCreationSubmitButton(
-              onSubmit: () {
-                controller.handleSubmitButtonTapped();
-              },
-              text: 'user_data_generation_form_submit_button',
-            )
-          ],
+          children: children,
         ),
       ),
     );

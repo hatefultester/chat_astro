@@ -4,13 +4,13 @@
 
 import 'package:equatable/equatable.dart';
 
-class UserProfileEntity extends Equatable {
+class UserInfo extends Equatable {
   final String birthDate;
   final String birthPlace;
   final String birthTime;
   final String userLanguage;
 
-  const UserProfileEntity({required this.userLanguage, required this.birthDate, required this.birthPlace, required this.birthTime});
+  const UserInfo({required this.userLanguage, required this.birthDate, required this.birthPlace, required this.birthTime});
 
   @override
   List<Object?> get props => [birthDate, birthPlace, birthTime];

@@ -10,11 +10,10 @@ import '../../../feature/user_creation/domain/entities/user_profile_data.dart';
 import '../session_service.dart';
 
 class SessionServiceImpl extends GetxService implements SessionService {
-  static SessionServiceImpl get to => Get.find();
 
   Locale? locale;
 
-  UserProfileData? userProfileData;
+  UserProfile? userProfileData;
 
   final Connectivity _connectivity = Connectivity();
 

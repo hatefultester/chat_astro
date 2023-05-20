@@ -1,15 +1,16 @@
+import 'package:chat_astro/feature/chat_detail/binding.dart';
 import 'package:dart_openai/openai.dart';
 import 'package:get/get.dart';
 import 'package:logger/logger.dart';
 
-import 'core/services/impl/ads_service_impl.dart';
-import 'core/services/impl/session_service_impl.dart';
-import 'core/services/impl/storage_service_impl.dart';
-import 'core/utils/context_wrapper.dart';
-import 'core/utils/dialog_utils.dart';
-import 'core/utils/open_ai_utils.dart';
-import 'feature/user_creation/binding.dart';
-import 'secret.dart';
+import '../core/services/impl/ads_service_impl.dart';
+import '../core/services/impl/session_service_impl.dart';
+import '../core/services/impl/storage_service_impl.dart';
+import '../core/utils/context_wrapper.dart';
+import '../core/utils/dialog_utils.dart';
+import '../core/utils/open_ai_utils.dart';
+import '../feature/user_creation/binding.dart';
+import '../secret.dart';
 
 class InjectionContainer {
   static Future<void> dependencies() async {
@@ -39,5 +40,8 @@ class InjectionContainer {
 
     // Loading user creation binding dependencies
     await UserCreationBinding.dependencies();
+
+    // Loading user chat binding dependencies
+    await ChatDetailBinding.dependencies();
   }
 }

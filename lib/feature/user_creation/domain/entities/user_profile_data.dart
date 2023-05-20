@@ -6,13 +6,13 @@ import 'package:equatable/equatable.dart';
 
 import 'user_profile_entity.dart';
 
-class UserProfileData extends Equatable {
-  final UserProfileEntity userProfileEntity;
+class UserProfile extends Equatable {
+  final UserInfo userInfo;
   final String chatResponse;
 
-  const UserProfileData(
-      {required this.userProfileEntity, required this.chatResponse});
+  const UserProfile(
+      {required this.userInfo, required this.chatResponse});
 
   @override
-  List<Object?> get props => [chatResponse, userProfileEntity];
+  List<Object?> get props => [chatResponse, UserInfo];
 }

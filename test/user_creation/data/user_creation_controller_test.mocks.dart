@@ -8,7 +8,7 @@ import 'dart:async' as _i6;
 import 'package:chat_astro/core/utils/context_wrapper.dart' as _i4;
 import 'package:chat_astro/core/utils/dialog_utils.dart' as _i8;
 import 'package:chat_astro/core/utils/open_ai_utils.dart' as _i2;
-import 'package:chat_astro/feature/user_creation/data/data_source/user_creation_remote_data_source_impl.dart'
+import 'package:chat_astro/feature/user_creation/data/sources/user_creation_remote_data_source_impl.dart'
     as _i5;
 import 'package:chat_astro/feature/user_creation/domain/entities/user_profile_entity.dart'
     as _i7;
@@ -90,7 +90,7 @@ class MockUserCreationRemoteDataSourceImpl extends _i1.Mock
       ) as _i2.OpenAiUtils);
   @override
   _i6.Future<String> getUserProfileResponse(
-          {required _i7.UserProfileEntity? userProfileEntity}) =>
+          {required _i7.userProfileInfo? userProfileEntity}) =>
       (super.noSuchMethod(
         Invocation.method(
           #getUserProfileResponse,

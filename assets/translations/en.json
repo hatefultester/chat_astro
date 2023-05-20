@@ -7,5 +7,8 @@
   "place_of_birth_form_placeholder_hint": "Insert the name of the city and country you were born",
   "user_data_generation_form_validation_warning": "Please make sure you filled all fields properly.",
   "user_data_generation_form_submit_button": "Submit",
-  "user_data_generation_loading" : "We are processing your data, please be patient"
+  "user_data_generation_loading": "We are processing your data, please be patient",
+  "chat_loading": "Loading chat...",
+  "chat_try_again": "Try again",
+  "chat_error_message": "Loading chat failed during loading"
 }

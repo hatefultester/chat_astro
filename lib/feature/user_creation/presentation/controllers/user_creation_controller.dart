@@ -15,7 +15,7 @@ abstract class UserCreationController {
   void handleSelectBirthTime();
   void handleSubmitButtonTapped();
   void navigateToDetailScreen();
-  UserProfileEntity parseUserProfileEntity();
+  UserInfo parseUserProfileEntity();
   void storeUserProfileDataToCache();
   void validateIfSubmitIsAvailable();
 }

@@ -2,7 +2,7 @@
  * Copyright (c) 2023. File was created by Matěj Grohmann, all rights reserved.
  */
 
-import 'package:chat_astro/feature/user_creation/data/data_source/user_creation_remote_data_source_impl.dart';
+import 'package:chat_astro/feature/user_creation/data/sources/user_creation_remote_data_source_impl.dart';
 import 'package:chat_astro/feature/user_creation/data/repository/user_creation_repository_impl.dart';
 import 'package:chat_astro/feature/user_creation/domain/entities/user_profile_data.dart';
 import 'package:chat_astro/feature/user_creation/domain/entities/user_profile_entity.dart';
@@ -33,8 +33,8 @@ void main() {
     final tDateTime = DateTime.now();
     const tPlaceOfBirth = "Venice in italy";
     const tTimeOfBirth = TimeOfDay(hour: 10, minute: 30);
-    final tUserProfileEntity = UserProfileEntity(birthDate: tDateTime.toString(), birthPlace: tPlaceOfBirth, birthTime: tTimeOfBirth.toString(), userLanguage: 'en');
-    final tUserProfileData = UserProfileData(userProfileEntity: tUserProfileEntity, chatResponse: 'Test response');
+    final tUserProfileEntity = userProfileInfo(birthDate: tDateTime.toString(), birthPlace: tPlaceOfBirth, birthTime: tTimeOfBirth.toString(), userLanguage: 'en');
+    final tUserProfileData = UserProfile(UserInfo: tUserProfileEntity, chatResponse: 'Test response');
 
     test(
       'should return UserProfileData when createUserProfileData is called',

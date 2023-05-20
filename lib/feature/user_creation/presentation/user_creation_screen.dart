@@ -2,8 +2,9 @@
  * Copyright (c) 2023. File was created by Matěj Grohmann, all rights reserved.
  */
 
-import 'package:chat_astro/feature/user_creation/presentation/controllers/impl/user_creation_controller_state.dart';
+import 'package:chat_astro/app/app_locale_keys.dart';
 
+import 'controllers/impl/user_creation_controller_state.dart';
 import 'controllers/impl/user_creation_controller_impl.dart';
 import 'sections/background/user_creation_background_section.dart';
 import 'sections/form/user_creation_form_section.dart';
@@ -17,42 +18,50 @@ class UserCreationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<UserCreationControllerImpl>(
-      init: UserCreationControllerImpl(
-        state: UserCreationControllerState(
-            createProfile: Get.find(),
-            validateTime: Get.find(),
-            validatePlace: Get.find(),
-            validateDate: Get.find()),
-        contextWrapper: Get.find(),
-        dialogUtils: Get.find(),
-      ),
+      init: _initController(),
       builder: (UserCreationControllerImpl controller) {
         return Scaffold(
           backgroundColor: Colors.black,
-          body: Obx(() {
-            if (controller.state.isLoadingPresent.value) {
-              return const Center(
-                child: UserCreationLoadingWidget(
-                  text: 'user_data_generation_loading',
-                ),
-              );
-            }
+          body: Obx(
+            () {
+              // handle loading state of page when loading is presented
+              if (controller.state.isLoadingPresent.value) {
+                return const Center(
+                  child: UserCreationLoadingWidget(
+                    text: LocaleKey.USER_DATA_GENERATION_LOADING,
+                  ),
+                );
+              }
 
-            return Column(
-              children: const [
-                Expanded(
-                  flex: 3,
-                  child: UserCreationBackgroundSection(),
-                ),
-                Expanded(
-                  flex: 3,
-                  child: UserCreationFormSection(),
-                ),
-              ],
-            );
-          }),
+              // handle loaded state
+              return Column(
+                children: const [
+                  Expanded(
+                    flex: 2,
+                    child: UserCreationBackgroundSection(),
+                  ),
+                  Expanded(
+                    flex: 3,
+                    child: UserCreationFormSection(),
+                  ),
+                ],
+              );
+            },
+          ),
         );
       },
     );
   }
+
+  UserCreationControllerImpl _initController() => UserCreationControllerImpl(
+        state: UserCreationControllerState(
+          createProfile: Get.find(),
+          validateTime: Get.find(),
+          validatePlace: Get.find(),
+          validateDate: Get.find(),
+          storeUserData: Get.find(),
+        ),
+        contextWrapper: Get.find(),
+        dialogUtils: Get.find(),
+      );
 }

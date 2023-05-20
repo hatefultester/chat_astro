@@ -3,6 +3,7 @@
  */
 
 import 'package:chat_astro/feature/user_creation/domain/entities/user_profile_data.dart';
+import 'package:chat_astro/feature/user_creation/domain/use_cases/store_user_data_to_session_use_case.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,6 +17,7 @@ class UserCreationControllerState {
   final ValidateUserTimeOfBirthUseCase validateTime;
   final ValidateUserPlaceOfBirthUseCase validatePlace;
   final ValidateUserDateOfBirthUseCase validateDate;
+  final StoreUserDataToSessionUseCase storeUserData;
 
   final TextEditingController dateOfBirthTextEditingController =
       TextEditingController();
@@ -24,7 +26,7 @@ class UserCreationControllerState {
   final TextEditingController placeOfBirthTextEditingController =
       TextEditingController();
 
-  late final UserProfileData userProfileData;
+  late final UserProfile userProfileData;
 
   RxBool isDateOfBirthValid = false.obs;
   RxBool isTimeOfBirthValid = false.obs;
@@ -40,6 +42,7 @@ class UserCreationControllerState {
     required this.validateTime,
     required this.validatePlace,
     required this.validateDate,
+    required this.storeUserData,
   });
 
   dismissLoading() => isLoadingPresent.value = false;
