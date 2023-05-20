@@ -38,4 +38,6 @@ flutter:
   assets:
     - assets/images/backgrounds/user_data_generation_background.png
     - assets/images/scoor_icon.png
+    - assets/images/chat_detail/chat_bot_avatar.png
+    - assets/images/chat_detail/profile_avatar_1.png
     - assets/translations/

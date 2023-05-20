@@ -10,9 +10,14 @@ class UserProfile extends Equatable {
   final UserInfo userInfo;
   final String chatResponse;
 
-  const UserProfile(
-      {required this.userInfo, required this.chatResponse});
+  final String chatAvatarImagePath;
+
+  const UserProfile({
+    required this.userInfo,
+    required this.chatResponse,
+    required this.chatAvatarImagePath,
+  });
 
   @override
-  List<Object?> get props => [chatResponse, UserInfo];
+  List<Object?> get props => [chatResponse, UserInfo, chatAvatarImagePath];
 }

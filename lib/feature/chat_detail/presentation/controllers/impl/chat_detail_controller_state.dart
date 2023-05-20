@@ -18,6 +18,9 @@ class ChatDetailControllerState {
 
   RxString initialChatMessage = ''.obs;
 
+  late String assistantImagePath;
+  late String userImagePath;
+
   startLoading() => isLoading.value = true;
   stopLoading() => isLoading.value = false;
   displayErrorMessage() => displayError.value = true;

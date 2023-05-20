@@ -33,6 +33,7 @@ class UserCreationRepositoryImpl implements UserCreationRepository {
           userProfileEntity: entity);
       logger.d('open ai response finished: $openAiResponse');
       return Right(UserProfile(
+        chatAvatarImagePath: 'assets/images/chat_detail/profile_avatar_1.png',
         userInfo: entity,
         chatResponse: openAiResponse,
       ));

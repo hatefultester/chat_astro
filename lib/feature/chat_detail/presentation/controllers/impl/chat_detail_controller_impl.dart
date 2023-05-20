@@ -41,6 +41,8 @@ class ChatDetailControllerImpl extends GetxController
       state.stopLoading();
     }, (r) {
       state.initialChatMessage.value = r.initialChatMessage;
+      state.assistantImagePath = r.assistantAvatarImagePath;
+      state.userImagePath = r.userAvatarImagePath;
       state.stopLoading();
     });
   }

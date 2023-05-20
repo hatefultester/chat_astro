@@ -38,7 +38,7 @@ class UserCreationRemoteDataSourceImpl implements UserCreationRemoteDataSource {
 
   List<String> _getAssistantInstructions() {
     List<String> assistantInstruction = [
-      'User will submit his date of birth, time of birth and place of birth. Please provide detailed explanatory long paragraph of his astrology interpretation in his language. IMPORTANT !Return just that paragraph, it is used in astrology application!'
+      'User will submit his date of birth, time of birth and place of birth. Please provide short explanation of his astrology interpretation in his language. IMPORTANT !Return just that paragraph, it is used in astrology application!'
     ];
     return assistantInstruction;
   }
