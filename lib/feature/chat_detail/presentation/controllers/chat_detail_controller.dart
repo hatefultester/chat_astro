@@ -6,4 +6,6 @@ abstract class ChatDetailController {
   Future<void> initializeChat();
   Future<void> handleUserMessage(String message);
   Future<void> handleTryAgainTapped();
+  Future<void> handleAssistentMessageWritten();
+  Future<void> handleAssistentMessageStarted();
 }

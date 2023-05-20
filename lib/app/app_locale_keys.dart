@@ -13,4 +13,5 @@ class LocaleKey {
   static const String CHAT_ERROR_MESSAGE = 'chat_error_message';
   static const String CHAT_TITLE = 'chat_title';
   static const String CHAT_INITIAL_ASSISTANT_CHAT_MESSAGE = 'chat_initial_assistant_chat_message';
+  static const String CHAT_HINT_MESSAGE = 'chat_hint_message';
 }

@@ -11,6 +11,7 @@ import 'package:chat_astro/feature/chat_detail/domain/entities/chat_data.dart';
 import 'package:chat_astro/core/abstractions/failures.dart';
 import 'package:logger/logger.dart';
 
+import '../../../domain/entities/chat_message.dart';
 import '../../sources/impl/chat_detail_remote_data_source_impl.dart';
 import '../chat_detail_repository.dart';
 
@@ -40,5 +41,17 @@ class ChatDetailRepositoryImpl implements ChatDetailRepository {
       _logger.e('syncing failed with exception e: ${e.toString()}');
       return Left(InvalidDataFailure());
     }
+  }
+
+  @override
+  Future<Either<Failure, ChatMessage>> getAssistantResponse(
+      {required List<ChatMessage> chat, required String userAvatar}) async {
+    return Right(ChatMessage(
+        message: 'Response fake', owner: ChatMessageOwner.assistant));
+  }
+
+  @override
+  Future<Either<Failure, bool>> validateUserMessage(String message) async {
+    return const Right(true);
   }
 }

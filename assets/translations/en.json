@@ -12,5 +12,6 @@
   "chat_try_again": "Try again",
   "chat_error_message": "Loading chat failed during loading",
   "chat_title": "Chat messages",
-  "chat_initial_assistant_chat_message": "To know more, feel free to ask me anything :)"
+  "chat_initial_assistant_chat_message": "To know more, feel free to ask me anything 😊",
+  "chat_hint_message" : "Type a message"
 }

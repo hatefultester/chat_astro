@@ -3,6 +3,7 @@ import 'package:chat_astro/feature/chat_detail/presentation/controllers/impl/cha
 import 'package:chat_astro/feature/chat_detail/presentation/widgets/chat_detail_assistent_message_bubble.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
 
 import '../widgets/chat_detail_user_message_bubble.dart';
@@ -12,15 +13,25 @@ class ChatDetailChatMessagesSection extends GetView<ChatDetailControllerImpl> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        ChatDetailAssistantMessageBubble(
-          assistantMessage: tr(LocaleKey.CHAT_INITIAL_ASSISTANT_CHAT_MESSAGE),
-        ),
-        ChatDetailUserMessageBubble(
-          userMessage: controller.state.initialChatMessage.value,
-        ),
-      ],
+    return SizedBox.expand(
+      child: Obx(() {
+        return ListView.builder(
+          itemCount: controller.state.messages.length,
+          itemBuilder: (context, index) {
+            final message = controller.state.messages[index];
+            if (message.fromUser) {
+              return ChatDetailUserMessageBubble(
+                userMessage: message.message,
+              );
+            } else {
+              return ChatDetailAssistantMessageBubble(
+                isLast: index == controller.state.messages.length - 1,
+                assistantMessage: message.message,
+              );
+            }
+          },
+        );
+      }),
     );
   }
 }
